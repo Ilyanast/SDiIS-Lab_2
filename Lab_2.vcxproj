@@ -151,7 +151,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Administator.cpp" />
+    <ClCompile Include="Assistant.cpp" />
+    <ClCompile Include="Emoleyee.cpp" />
     <ClCompile Include="Lab_2.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Professor.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Teacher.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Administator.h" />
+    <ClInclude Include="Assistant.h" />
+    <ClInclude Include="Emoleyee.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="Professor.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="Teacher.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

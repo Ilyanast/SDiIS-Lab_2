@@ -1,20 +1,33 @@
-﻿// Lab_2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿#include "Assistant.h"
+#include "Professor.h"
+#include "Administator.h"
+#include <fstream>
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+using namespace scientist;
+
+int main() {
+	ifstream fin("input.txt");
+	string name, subject, degree, publication, admin_role;
+	int age, year_of_service, salary, course;
+	double mid_mark;
+	fin >> name >> age >> salary >> year_of_service;
+	Employee obj_employee(name, age, salary, year_of_service);
+	fin >> name >> age >> salary >> year_of_service >> subject >> degree;
+	Teacher obj_teacher(name, age, salary, year_of_service, subject, degree);
+	fin >> name >> age >> admin_role >> salary >> year_of_service;
+	Administrator obj_administrator(name, age, admin_role, salary, year_of_service);
+	fin >> name >> age >> course >> mid_mark;
+	Student obj_student(name, age, course, mid_mark);
+	fin >> name >> age >> course >> degree >> mid_mark >> salary >> subject >> year_of_service;
+	Assistant obj_assistant(name, age, course, degree, mid_mark, salary, subject, year_of_service);
+	fin >> name >> age >> salary >> degree >> subject >> year_of_service >> publication;
+	Professor obj_professor(name, age, salary, degree, subject, year_of_service, publication);
+	obj_employee.print();
+	obj_teacher.print();
+	obj_administrator.print();
+	obj_student.print();
+	obj_assistant.print();
+	obj_professor.print();
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
